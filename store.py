@@ -75,7 +75,7 @@ class Store:
                 total_price += item_price
             except ValueError as e:
                 # If there's an error, print it and continue
-                print(f"Error ordering {product.name}: {e}")
+                print(f"Error ordering {product.get_name()}: {e}")
 
         return total_price
 

@@ -33,7 +33,10 @@ class Product:
         self.name = name
         self.price = price
         self.quantity = quantity
-        self.active = True  # Products are active by default
+        if quantity > 0:  # Set active status based on quantity
+            self.active = True
+        else:
+            self.active = False
 
     def get_quantity(self) -> int:
         """
@@ -77,6 +80,18 @@ class Product:
                         f"Price: {self.price}, "
                         f"Quantity: {self.quantity}")
         return product_info
+
+    def get_name(self) -> str:
+        """
+        Returns the product name.
+        """
+        return self.name
+
+    def get_price(self) -> float:
+        """
+        Returns the product price.
+        """
+        return self.price
 
     def buy(self, quantity: int) -> float:
         """
